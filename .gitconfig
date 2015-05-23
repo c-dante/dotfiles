@@ -1,0 +1,12 @@
+[color]
+	diff = always
+	ui = true
+[user]
+	name = jp
+	email = jplikesbikes@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vi
+[help]
+	autocorrect = 1
