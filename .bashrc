@@ -20,6 +20,10 @@ export PATH=~/bin:$PATH
 
 
 [ -r /usr/share/git/completion/git-prompt.sh   ] && . /usr/share/git/completion/git-prompt.sh
+export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
+[[ -r $HOME/.nvm/bash_completion ]] && . $HOME/.nvm/bash_completion # nvm bash completion
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+
+complete -C aws_completer aws
 
 shopt -s checkwinsize
