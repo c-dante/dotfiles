@@ -7,8 +7,8 @@
 [push]
 	default = simple
 [core]
-	editor = vi
-	pager = less -F -X
+	editor = vim
+	pager = less -x2 -F -X
 [help]
 	autocorrect = 1
 [alias]
