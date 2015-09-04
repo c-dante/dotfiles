@@ -18,8 +18,13 @@ alias diff='colordiff -u'
 
 export PATH=~/bin:$PATH
 
+#Java fonts in gtk
+export JAVA_FONTS=/usr/share/fonts/TTF
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
+#git bash completion
 [ -r /usr/share/git/completion/git-prompt.sh   ] && . /usr/share/git/completion/git-prompt.sh
+
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [[ -r $HOME/.nvm/bash_completion ]] && . $HOME/.nvm/bash_completion # nvm bash completion
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
