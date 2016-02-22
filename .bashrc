@@ -5,12 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Add cabal installed apps to path
-PATH=$PATH:~/.cabal/bin
-
 alias ls='ls --color=auto'
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-alias vi='vim'
 alias hg='hg --color=always'
 alias less='less -r'
 alias diff='colordiff -u'
