@@ -7,11 +7,13 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jp/.zshrc'
+zstyle :compinstall filename '/home/dante/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH=/home/dante/bin:$PATH
 
 [ ! -s $HOME/.antigen/antigen.zsh ] && git clone https://github.com/zsh-users/antigen.git .antigen
 [ -s $HOME/.antigen/antigen.zsh ] && source $HOME/.antigen/antigen.zsh # This loads antigen
