@@ -25,8 +25,14 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-projectionist'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ternjs/tern_for_vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'digitaltoad/vim-pug'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'pangloss/vim-javascript'
+Plug 'Raimondi/delimitMate'
+Plug 'Lokaltog/vim-distinguished'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Plugin configuration
@@ -43,6 +49,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" Theme
+syntax enable
+set background=dark
+colorscheme  distinguished
+" ycm
+let g:ycm_auto_trigger = 1
+" ctrlp use ag
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 
 " Sensible defaults from http://stevelosh.com/blog/2010/09/coming-home-to-vim/#making-vim-more-useful
 " tabs
@@ -64,7 +79,9 @@ set visualbell
 set cursorline
 set ttyfast
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim') " neovim doesn't have this
+	set ttymouse=xterm2
+endif
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
@@ -118,6 +135,12 @@ vnoremap <F1> <ESC>
 " make ; also map to :
 " nnoremap ; :
 
+" make kj also map to <esc>
+inoremap kj <esc>
+inoremap jj <esc>
+vnoremap kj <esc>
+vnoremap jj <esc>
+
 " Save on focus lost (just like webstorm)
 au FocusLost * :wa
 set autowrite
@@ -126,6 +149,9 @@ augroup AutoWrite
 	autocmd! BufLeave * :update
 augroup END
 
+" Detect when a file has changed outside of vim and update it
 set autoread
 autocmd CursorHold * checktime
 
+" automatically change working dir to same as current file
+set autochdir
