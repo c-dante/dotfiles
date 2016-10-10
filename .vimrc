@@ -33,6 +33,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
+Plug 'rgarver/Kwbd.vim'
 call plug#end()
 
 " Plugin configuration
