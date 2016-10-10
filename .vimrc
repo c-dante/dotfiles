@@ -141,6 +141,12 @@ inoremap jj <esc>
 vnoremap kj <esc>
 vnoremap jj <esc>
 
+" make CTRL+hjkl move splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Save on focus lost (just like webstorm)
 au FocusLost * :wa
 set autowrite
