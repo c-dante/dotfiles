@@ -148,6 +148,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" save and load session
+map sv :mksession! ~/vim_session <cr> " Quick write session with F2
+map re :source ~/vim_session <cr>     " And load session with F3
+
+
 " Save on focus lost (just like webstorm)
 au FocusLost * :wa
 set autowrite
