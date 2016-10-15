@@ -34,6 +34,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
+Plug 'blueyed/vim-diminactive'
 call plug#end()
 
 " Plugin configuration
