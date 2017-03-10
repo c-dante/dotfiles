@@ -11,6 +11,7 @@ alias hg='hg --color=always'
 alias less='less -r'
 alias diff='colordiff -u'
 alias gti='git'
+alias gg = git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)' --all
 #alias sbt='sbt -J-noverify -J-javaagent:/opt/jrebel/jrebel.jar'
 
 export PATH=~/bin:$PATH
