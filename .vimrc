@@ -15,13 +15,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'rking/ag.vim'
+Plug 'mhinz/vim-grepper'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-projectionist'
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -47,6 +48,7 @@ set t_Co=256
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -57,8 +59,10 @@ set background=dark
 colorscheme  distinguished
 " ycm
 let g:ycm_auto_trigger = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 " ctrlp use ag
-let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 " Sensible defaults from http://stevelosh.com/blog/2010/09/coming-home-to-vim/#making-vim-more-useful
@@ -108,7 +112,7 @@ vnoremap <tab> %
 
 " Text wrapping
 set wrap
-set textwidth=79
+set textwidth=120
 set formatoptions=qrn1
 "set colorcolumn=85
 
@@ -118,16 +122,16 @@ set listchars=tab:→\ ,
 
 " Turn off arrow keys (to help learn keyboard navigation
 " Enable later
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-" nnoremap j gj
-" nnoremap k gk
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
 " turn off the help key for vim
 inoremap <F1> <ESC>
@@ -135,7 +139,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " make ; also map to :
-" nnoremap ; :
+nnoremap ; :
 
 " make kj also map to <esc>
 inoremap kj <esc>
@@ -153,6 +157,9 @@ nnoremap <C-H> <C-W><C-H>
 map sv :mksession! ~/vim_session <cr> " Quick write session with F2
 map re :source ~/vim_session <cr>     " And load session with F3
 
+" make shift + tab unindent
+inoremap <S-Tab> <C-d>
+nnoremap <S-Tab> <<
 
 " Save on focus lost (just like webstorm)
 au FocusLost * :wa
