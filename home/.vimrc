@@ -16,14 +16,17 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-obsession'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ap/vim-css-color'
-Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-grepper'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-projectionist'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -35,7 +38,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
-Plug 'blueyed/vim-diminactive'
+Plug 'rust-lang/rust.vim'
+Plug 'ensime/ensime-vim'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 " Plugin configuration
@@ -43,16 +48,30 @@ call plug#end()
 autocmd BufWritePre * StripWhitespace
 " vim-gitgutter - make the markers show up quicker
 set updatetime=250
+" always show the signs column so it doesn't just on first change to a file
+if exists('&signcolumn')  " Vim 7.4.2201
+	set signcolumn=yes
+else
+	let g:gitgutter_sign_column_always = 1
+endif
 " syntastic - defaults from the installation
 set t_Co=256
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" rust-racer
+let g:racer_cmd = "/home/jp/.cargo/bin/racer"
+let g:ycm_rust_src_path = '/home/jp/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+" ensime
+let g:ensime_server_v2=1
+" tern
+let g:tern_command='$NVM_BIN/tern'
 " Theme
 syntax enable
 set background=dark
@@ -61,9 +80,20 @@ colorscheme  distinguished
 let g:ycm_auto_trigger = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_rust_src_path = '/home/jp/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+" vim-jsdoc
+let g:jsdoc_enable_es6 = 1
 " ctrlp use ag
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
+if executable('ag')
+	" Use ag over grep
+	set grepprg=ag\ --nogroup\ --nocolor
+
+	" Use ag in CtrlP for listing files.
+	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	let g:ctrlp_use_caching = 0
+endif
 
 " Sensible defaults from http://stevelosh.com/blog/2010/09/coming-home-to-vim/#making-vim-more-useful
 " tabs
@@ -81,7 +111,7 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+set noeb vb t_vb=
 set cursorline
 set ttyfast
 set mouse=a
@@ -109,6 +139,9 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+
+" replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Text wrapping
 set wrap
@@ -143,9 +176,7 @@ nnoremap ; :
 
 " make kj also map to <esc>
 inoremap kj <esc>
-inoremap jj <esc>
 vnoremap kj <esc>
-vnoremap jj <esc>
 
 " make CTRL+hjkl move splits
 nnoremap <C-J> <C-W><C-J>
@@ -160,6 +191,9 @@ map re :source ~/vim_session <cr>     " And load session with F3
 " make shift + tab unindent
 inoremap <S-Tab> <C-d>
 nnoremap <S-Tab> <<
+
+" make /** start jsdoc
+inoremap /** <esc> :JsDoc <cr>
 
 " Save on focus lost (just like webstorm)
 au FocusLost * :wa

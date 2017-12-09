@@ -1,5 +1,10 @@
 # dotfiles
 
++ install vcsh `pacaur -S vcsh`
++ then `vcsh clone git@github.com:jplikesbikes/dotfiles.git` 
++ delete any files that are in conflict `rm -rf .config/vcsh` 
++ and `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
+
 ## Vim
 Can't currently autoinstall everything needed for my vimrc.
 You need to install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/)
@@ -7,6 +12,20 @@ and finish up the install of [ternjs/tern_for_vim](https://github.com/ternjs/ter
 ```
 pacaur -S vim-youcompleteme-git
 cd .vim/plugged/tern_for_vim  && npm install
+rustup component add rust-src
+```
+
+for ensime (todo:
+```
+pacaur -S python-sexpdata python-websocket-client
+// or 
+pacaur -S python2-sexpdata python2-websocket-client
+// have to figure out why its using python2 sometimes
+```
+
+for my setup of ctrl-p (todo: make this optional)
+```
+pacaur -S the_silver_searcher
 ```
 
 On ubuntu, you might need to install vim-plug youself
@@ -36,3 +55,6 @@ Icon=/home/jp/scratch/forge/forge-icon.png
 Type=Application
 Categories=Games;
 ```
+
+## Cool commands
+`top -c -p $(pgrep -d',' -f name-of-your-process)`
