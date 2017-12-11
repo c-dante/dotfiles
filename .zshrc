@@ -91,3 +91,4 @@ bindkey "^[[F" end-of-line
 
 # set psql
 export PSQL_EDITOR=vim
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

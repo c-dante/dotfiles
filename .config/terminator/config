@@ -1,6 +1,10 @@
 [global_config]
 [keybindings]
+  close_term = <Primary>w
   go_next = <Primary><Shift>n
+  new_tab = <Primary>t
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
   search = None
 [layouts]
   [[default]]
