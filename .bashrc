@@ -32,6 +32,8 @@ export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [[ -r $HOME/.nvm/bash_completion ]] && . $HOME/.nvm/bash_completion # nvm bash completion
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-complete -C aws_completer aws
+# If you want to add aws extras -- might need bash-completion if not in bash
+# complete -C aws_completer aws
 
-shopt -s checkwinsize
+# If you have a problem with rendering terminals after resize -- might need shopt
+# shopt -s checkwinsize
