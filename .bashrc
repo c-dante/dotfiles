@@ -19,7 +19,7 @@ alias gitp='git'
 alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)" --all'
 #alias sbt='sbt -J-noverify -J-javaagent:/opt/jrebel/jrebel.jar'
 
-export PATH=/home/jp/bin:/home/jp/scratch/confluent-3.3.0/bin:/home/jp/.cargo/bin:$PATH
+export PATH=~/bin:~/scratch/confluent-3.3.0/bin:~/.cargo/bin:$PATH
 
 #Java fonts in gtk
 export JAVA_FONTS=/usr/share/fonts/TTF
