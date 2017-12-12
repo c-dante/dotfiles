@@ -6,6 +6,7 @@
   next_tab = <Primary>Tab
   prev_tab = <Primary><Shift>Tab
   search = None
+  split_horiz = <Primary><Shift>h
 [layouts]
   [[default]]
     [[[child1]]]
