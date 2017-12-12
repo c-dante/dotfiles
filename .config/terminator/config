@@ -1,4 +1,5 @@
 [global_config]
+  handle_size = 1
 [keybindings]
   close_term = <Primary>w
   go_next = <Primary><Shift>n
