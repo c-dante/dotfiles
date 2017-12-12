@@ -1,0 +1,13 @@
+{
+    "todohighlight.isCaseSensitive": false,
+    "todohighlight.keywordsPattern": "@?todo(\\s|:).*",
+    "todohighlight.defaultStyle": {
+        "color": "#ff00ff",
+        "backgroundColor": "editor.backgroundColor"
+    },
+    "editor.fontFamily": "'Source Code Pro'",
+    "editor.fontSize": 12,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false
+}
