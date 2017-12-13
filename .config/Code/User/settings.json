@@ -1,8 +1,11 @@
 {
     "todohighlight.isCaseSensitive": false,
-    "todohighlight.keywordsPattern": "@?todo(\\s|:).*",
+    "todohighlight.keywordsPattern": "@?todo(\\n|\\W[^\\n]*)",
     "todohighlight.defaultStyle": {
-        "color": "#ff00ff",
+        // "border": "2px solid #AA00AA",
+        // "borderRadius": "5px",
+        "outline": "1px solid #AA00AA",
+        "color": "editor.foregroundColor",
         "backgroundColor": "editor.backgroundColor"
     },
     "editor.fontFamily": "'Source Code Pro'",
