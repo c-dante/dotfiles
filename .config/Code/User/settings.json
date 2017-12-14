@@ -8,9 +8,10 @@
         "color": "editor.foregroundColor",
         "backgroundColor": "editor.backgroundColor"
     },
-    "editor.fontFamily": "'Source Code Pro'",
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 12,
     "editor.renderWhitespace": "all",
     "editor.tabSize": 2,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "explorer.openEditors.visible": 0
 }
