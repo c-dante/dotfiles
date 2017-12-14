@@ -65,5 +65,13 @@
 		"key": "shift+f12",
 		"command": "-editor.action.referenceSearch.trigger",
 		"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "ctrl+\\",
+		"command": "-workbench.action.splitEditor"
 	}
 ]

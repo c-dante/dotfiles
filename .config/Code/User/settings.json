@@ -12,5 +12,8 @@
     "editor.fontSize": 12,
     "editor.renderWhitespace": "all",
     "editor.tabSize": 2,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "editor.minimap.enabled": false,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true
 }
