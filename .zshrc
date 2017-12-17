@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jp/.zshrc'
+zstyle :compinstall filename '/home/dante/.zshrc'
 
 fpath+=~/.zfunc
 
@@ -15,8 +15,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export PATH=/home/dante/bin:$PATH
 export TERM=xterm-256color
-export PATH=/home/jp/bin:/home/jp/.cargo/bin:/home/jp/scratch/confluent-3.3.0/bin:$PATH
+export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
 
 [ ! -s $HOME/.antigen/antigen.zsh ] && git clone https://github.com/zsh-users/antigen.git .antigen
 [ -s $HOME/.antigen/antigen.zsh ] && source $HOME/.antigen/antigen.zsh # This loads antigen
@@ -90,3 +91,4 @@ bindkey "^[[F" end-of-line
 
 # set psql
 export PSQL_EDITOR=vim
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

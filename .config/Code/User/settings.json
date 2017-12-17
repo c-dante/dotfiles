@@ -1,0 +1,21 @@
+{
+    "todohighlight.isCaseSensitive": false,
+    "todohighlight.keywordsPattern": "@?todo(\\n|\\W[^\\n]*)",
+    "todohighlight.defaultStyle": {
+        // "border": "2px solid #AA00AA",
+        // "borderRadius": "5px",
+        "outline": "1px solid #AA00AA",
+        "color": "editor.foregroundColor",
+        "backgroundColor": "editor.backgroundColor"
+    },
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 12,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.minimap.enabled": false,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "explorer.openEditors.visible": 0
+}
+

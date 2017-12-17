@@ -25,6 +25,14 @@ for my setup of ctrl-p (todo: make this optional)
 pacaur -S the_silver_searcher
 ```
 
+On ubuntu, you might need to install vim-plug youself
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Then after running vim: `:PlugInstall`
+
 ## forge
 download from http://www.slightlymagic.net/wiki/Forge
 ```

@@ -12,9 +12,14 @@ alias hg='hg --color=always'
 alias less='less -r'
 alias diff='colordiff -u'
 alias gti='git'
+alias gt='git'
+alias got='git'
+alias gut='git'
+alias gitp='git'
+alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)" --all'
 #alias sbt='sbt -J-noverify -J-javaagent:/opt/jrebel/jrebel.jar'
 
-export PATH=/home/jp/bin:/home/jp/scratch/confluent-3.3.0/bin:/home/jp/.cargo/bin:$PATH
+export PATH=~/bin:~/scratch/confluent-3.3.0/bin:~/.cargo/bin:$PATH
 
 #Java fonts in gtk
 export JAVA_FONTS=/usr/share/fonts/TTF
@@ -27,6 +32,8 @@ export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [[ -r $HOME/.nvm/bash_completion ]] && . $HOME/.nvm/bash_completion # nvm bash completion
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-complete -C aws_completer aws
+# If you want to add aws extras -- might need bash-completion if not in bash
+# complete -C aws_completer aws
 
-shopt -s checkwinsize
+# If you have a problem with rendering terminals after resize -- might need shopt
+# shopt -s checkwinsize

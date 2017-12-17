@@ -152,14 +152,14 @@ set listchars=tab:→\ ,
 
 " Turn off arrow keys (to help learn keyboard navigation
 " Enable later
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -179,6 +179,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" save and load session
+map sv :mksession! ~/vim_session <cr> " Quick write session with F2
+map re :source ~/vim_session <cr>     " And load session with F3
 
 " make shift + tab unindent
 inoremap <S-Tab> <C-d>
