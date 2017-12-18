@@ -14,8 +14,17 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
-    "editor.trimAutoWhitespace": true,
     "files.trimTrailingWhitespace": true,
-    "explorer.openEditors.visible": 0
+    "explorer.openEditors.visible": 0,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    }
 }
 
