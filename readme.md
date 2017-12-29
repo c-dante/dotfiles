@@ -1,8 +1,8 @@
 # dotfiles
 
 + install vcsh `pacaur -S vcsh`
-+ then `vcsh clone git@github.com:jplikesbikes/dotfiles.git` 
-+ delete any files that are in conflict `rm -rf .config/vcsh` 
++ then `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
++ delete any files that are in conflict `rm -rf .config/vcsh`
 + and `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
 
 ## Vim
@@ -47,11 +47,19 @@ create .local/share/applications/forge.desktop
 ```
 [Desktop Entry]
 Name=Forge
-Exec=/home/jp/scratch/forge/forge.sh
-Icon=/home/jp/scratch/forge/forge-icon.png
+Exec=~/scratch/forge/forge.sh
+Icon=~/scratch/forge/forge-icon.png
 Type=Application
 Categories=Games;
 ```
 
 ## Cool commands
 `top -c -p $(pgrep -d',' -f name-of-your-process)`
+
+## [Antigen](https://github.com/zsh-users/antigen/)
+If you use zsh, antigen is set up to install some useful plugins.
+
+Updating antigen: `antigen selfupdate`
+
+Updating plugins: `antigen update`
+
