@@ -4,7 +4,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory extendedglob
 unsetopt beep
-bindkey -v
+# bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/dante/.zshrc'
@@ -58,13 +58,13 @@ zle -N ctrlp
 bindkey "^p" ctrlp
 
 # vi mode in right prompt
-function zle-line-init zle-keymap-select {
-	VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-	RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-	zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#	VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+#	RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#	zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 export KEYTIMEOUT=2
 
 # In Vim backspace doesn't stop at the point where you started insert mode:

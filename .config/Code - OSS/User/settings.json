@@ -33,5 +33,6 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true
-    }
+    },
+    "cSpell.language": "en"
 }
