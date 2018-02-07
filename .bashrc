@@ -37,3 +37,4 @@ export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 
 # If you have a problem with rendering terminals after resize -- might need shopt
 # shopt -s checkwinsize
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
