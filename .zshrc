@@ -24,6 +24,7 @@ export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent
 
 antigen bundle nojhan/liquidprompt
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle extract
 antigen apply
 
 # configure autosuggests
