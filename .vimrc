@@ -39,7 +39,7 @@ Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 call plug#end()
 
@@ -205,3 +205,7 @@ autocmd CursorHold * checktime
 
 " automatically change working dir to same as current file
 set autochdir
+
+" CTRLP ignores
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|node_modules'
+
