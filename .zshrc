@@ -6,6 +6,7 @@ setopt appendhistory extendedglob
 unsetopt beep
 # bindkey -v
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/dante/.zshrc'
 
@@ -18,6 +19,11 @@ compinit
 export PATH=/home/dante/bin:$PATH
 export TERM=xterm-256color
 export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
+
+# Set unicode charset
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 [ ! -s $HOME/.antigen/antigen.zsh ] && git clone https://github.com/zsh-users/antigen.git .antigen
 [ -s $HOME/.antigen/antigen.zsh ] && source $HOME/.antigen/antigen.zsh # This loads antigen
@@ -40,8 +46,16 @@ alias hg='hg --color=always'
 alias less='less -r'
 alias diff='colordiff -u'
 alias sudo='sudo -E '
+alias grep='grep --color=auto '
 alias gti='git'
+alias gt='git'
+alias got='git'
+alias gut='git'
 alias gitp='git'
+alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)" --all'
+alias docker-exec='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
+
+export WINEARCH=win32
 
 # multi-mv
 autoload -U zmv

@@ -39,7 +39,7 @@ Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'ensime/ensime-vim'
+" Plug 'ensime/ensime-vim'
 Plug 'derekwyatt/vim-scala'
 call plug#end()
 

@@ -14,7 +14,6 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
-    "files.trimTrailingWhitespace": true,
     "explorer.openEditors.visible": 0,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -26,13 +25,33 @@
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "files.exclude": {
+    "search.exclude": {
         "**/node_modules": true,
+        "**/.idea": true,
+        "**/.vscode": true,
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true
     },
-    "cSpell.language": "en"
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.idea": true,
+        "**/.vscode": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "cSpell.language": "en",
+    "cSpell.userWords": [
+        "arg",
+        "callstack",
+        "fn",
+        "jank",
+        "manip"
+    ],
+    "window.zoomLevel": 0
 }
