@@ -55,11 +55,11 @@ LP_PS1_POSTFIX=""
 # Set to a null string "" if you do not want color.
 
 # Current working directory
-LP_COLOR_PATH="$BOLD_BLUE"         # as normal user
+LP_COLOR_PATH="$CYAN"         # as normal user
 LP_COLOR_PATH_ROOT="$BOLD_YELLOW"   # as root
 
 # Color of the proxy mark
-LP_COLOR_PROXY="$BOLD_BLUE"
+LP_COLOR_PROXY="$CYAN"
 
 # Jobs count
 LP_COLOR_JOB_D="$YELLOW"        # Detached (aka screen sessions)
@@ -106,7 +106,7 @@ LP_COLOR_DISCHARGING_UNDER="$RED"     # discharging and under threshold
 LP_COLOR_TIME="$BLUE"
 
 # Brackets inside screen/tmux
-LP_COLOR_IN_MULTIPLEXER="$BOLD_BLUE"
+LP_COLOR_IN_MULTIPLEXER="$CYAN"
 
 # Virtual environment
 LP_COLOR_VIRTUALENV="$CYAN"
