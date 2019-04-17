@@ -54,6 +54,7 @@ alias gut='git'
 alias gitp='git'
 alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)" --all'
 alias docker-exec='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
+alias env='env | sort | awk -F = '"'"'{ print "\033[1;35m" $1 "\033[0m = " $2; }'"'"''
 
 export WINEARCH=win32
 
@@ -106,3 +107,4 @@ bindkey "^[[F" end-of-line
 # set psql
 export PSQL_EDITOR=vim
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
