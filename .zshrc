@@ -16,9 +16,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=/home/dante/bin:$PATH
 export TERM=xterm-256color
-export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
+export PATH=~/bin:~/.cargo/bin:~/scratch/confluent-3.3.0/bin:$PATH
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set unicode charset
 export LC_ALL=en_US.UTF-8
