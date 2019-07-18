@@ -205,3 +205,10 @@ autocmd CursorHold * checktime
 
 " automatically change working dir to same as current file
 set autochdir
+
+" CTRLP ignores
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|node_modules'
+
+
+" Map CTRL+ALT+SHIFT+Q to indent document
+nnoremap asd gg=G
