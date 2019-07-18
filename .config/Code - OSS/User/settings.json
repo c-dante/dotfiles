@@ -14,38 +14,44 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": false,
     "editor.minimap.enabled": false,
-    "files.trimTrailingWhitespace": true,
     "explorer.openEditors.visible": 0,
     "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true,
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "files.exclude": {
+    "search.exclude": {
         "**/node_modules": true,
+        "**/.idea": true,
+        "**/.vscode": true,
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true
     },
-    "gitlens.keymap": "none",
-    "gitlens.gitExplorer.enabled": false,
-    "gitlens.historyExplorer.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.mode.statusBar.enabled": false,
-    "extensions.ignoreRecommendations": false,
-    "eslint.autoFixOnSave": true,
-    "cSpell.dictionaryDefinitions": [
-        "Pred"
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.idea": true,
+        "**/.vscode": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "cSpell.language": "en",
+    "cSpell.userWords": [
+        "arg",
+        "callstack",
+        "fn",
+        "jank",
+        "manip"
     ],
-    "telemetry.enableTelemetry": false,
-    "javascript.preferences.quoteStyle": "single",
-    "editor.quickSuggestionsDelay": 100,
-    "editor.snippetSuggestions": "none",
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.parameterHints.enabled": false,
-    "editor.lightbulb.enabled": false,
-    "editor.dragAndDrop": false,
-    "window.zoomLevel": 0,
-    "sync.gist": "6aae7f04d52d5a25a1288d62d93989f0",
+    "window.zoomLevel": 0
 }

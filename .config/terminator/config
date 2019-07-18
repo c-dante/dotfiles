@@ -1,5 +1,7 @@
 [global_config]
   handle_size = 1
+  title_font = Source Code Pro 9
+  title_use_system_font = False
 [keybindings]
   close_term = <Primary>w
   go_next = <Primary><Shift>n
@@ -16,6 +18,84 @@
     [[[window0]]]
       parent = ""
       type = Window
+  [[DevPanel]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:0
+      size = 2048, 1088
+      title = /usr/bin/zsh
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None, None
+      last_active_term = 5945d5aa-e300-4aad-a7ea-24f7dcab60d9, 8767a0a5-3f23-4474-87a9-d40402c74034, 92736af5-1830-40fd-9c32-bfa04e3349b4
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 524
+      ratio = 0.5
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 1023
+      ratio = 0.500244498778
+      type = HPaned
+    [[[child7]]]
+      order = 1
+      parent = child1
+      position = 1023
+      ratio = 0.500244498778
+      type = HPaned
+    [[[terminal10]]]
+      directory = /home/dante/repos
+      order = 2
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 92736af5-1830-40fd-9c32-bfa04e3349b4
+    [[[terminal4]]]
+      directory = /home/dante/repos/dv-client
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 5945d5aa-e300-4aad-a7ea-24f7dcab60d9
+    [[[terminal5]]]
+      directory = /home/dante/repos/dv-client
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 70a5f145-ea7b-421e-9034-9baa8f77137e
+    [[[terminal6]]]
+      directory = /home/dante/repos/dv-client
+      order = 1
+      parent = child2
+      profile = default
+      type = Terminal
+      uuid = 3bdb4685-ccd0-4018-b0a5-481911b7da9b
+    [[[terminal8]]]
+      directory = /home/dante/repos/dv-server
+      order = 0
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = 8767a0a5-3f23-4474-87a9-d40402c74034
+    [[[terminal9]]]
+      directory = /home/dante/repos/dv-server/docker
+      order = 1
+      parent = child7
+      profile = default
+      type = Terminal
+      uuid = c14c18d0-04d9-4101-8f02-140cf46a3a65
 [plugins]
 [profiles]
   [[default]]
