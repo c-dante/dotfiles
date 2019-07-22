@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Dev Term
-Exec=terminator -l dev
+Exec=terminator -l DevPanel
 Icon=terminator
 
