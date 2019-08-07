@@ -5,6 +5,11 @@
 + delete any files that are in conflict `rm -rf .config/vcsh`
 + and `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
 
+## dconf
+You can load some nice defaults with: `dconf load / < ~/.config/dconf/user.conf`
+
+To dump settings to pluck updates: `dconf dump / > current-settings.conf`
+
 ## Vim
 Can't currently autoinstall everything needed for my vimrc.
 You need to install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/)
