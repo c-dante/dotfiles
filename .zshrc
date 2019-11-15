@@ -67,6 +67,7 @@ alias env='env | sort | awk -F = '"'"'{ print "\033[1;35m" $1 "\033[0m = " $2; }
 alias open='xdg-open'
 
 export WINEARCH=win32
+alias ls-ln='find node_modules -maxdepth 1 -type l -ls'
 
 # multi-mv
 autoload -U zmv
