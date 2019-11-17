@@ -15,7 +15,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=/home/dante/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=~/bin:$PATH
 export TERM=xterm-256color
 export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
 
@@ -33,7 +34,7 @@ bindkey '^ ' autosuggest-accept
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
 
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias ll='ls -l'
 alias vi='vim'
 alias hg='hg --color=always'
@@ -92,3 +93,4 @@ bindkey "^[[F" end-of-line
 # set psql
 export PSQL_EDITOR=vim
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
