@@ -39,7 +39,10 @@ Plug 'Lokaltog/vim-distinguished'
 Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
 Plug 'rust-lang/rust.vim'
-" Plug 'ensime/ensime-vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'derekwyatt/vim-scala'
 call plug#end()
 
@@ -65,8 +68,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" ensime
-let g:ensime_server_v2=1
 " tern
 let g:tern_command='$NVM_BIN/tern'
 " Theme
