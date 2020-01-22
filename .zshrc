@@ -11,6 +11,7 @@ unsetopt beep
 zstyle :compinstall filename '/home/dante/.zshrc'
 
 fpath=($fpath ~/.zsh/completion)
+fpath+=~/.zfunc
 
 autoload -Uz compinit
 compinit
