@@ -10,7 +10,6 @@ unsetopt beep
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/dante/.zshrc'
 
-fpath+=~/.zfunc
 fpath=($fpath ~/.zsh/completion)
 
 autoload -Uz compinit
@@ -26,13 +25,12 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-[ ! -s $HOME/.antigen/antigen.zsh ] && git clone https://github.com/zsh-users/antigen.git .antigen
-[ -s $HOME/.antigen/antigen.zsh ] && source $HOME/.antigen/antigen.zsh # This loads antigen
+[ ! -s $HOME/.zinit/zinit.zsh ] && git clone https://github.com/zdharma/zinit.git ~/.zinit
+[ -s $HOME/.zinit/zinit.zsh ] && source $HOME/.zinit/zinit.zsh # This loads antigen
 
-antigen bundle nojhan/liquidprompt
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle extract
-antigen apply
+zinit light zsh-users/zsh-autosuggestions
+zinit light nojhan/liquidprompt
+zinit snippet OMZ::lib/termsupport.zsh
 
 # configure autosuggests
 # ctrl-space to accept suggestion
@@ -41,6 +39,10 @@ bindkey '^ ' autosuggest-accept
 
 # Prevent banners in some npm packages
 export ADBLOCK=true
+export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
+export NVM_DIR="$HOME/.nvm"
+export NVM_LAZY_LOAD=true
+zinit light lukechilds/zsh-nvm # This load nvm on first use of node, npm, etc
 
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
@@ -129,3 +131,5 @@ export PSQL_EDITOR=vim
 if type "rg" > /dev/null; then
 	export FZF_DEFAULT_COMMAND='rg --files'
 fi
+if [  ]; then source <(kubectl completion zsh); fi
+if [  ]; then source <(argocompletion zsh); fi
