@@ -16,6 +16,7 @@
     "files.trimTrailingWhitespace": true,
     "explorer.openEditors.visible": 0,
     "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
@@ -38,7 +39,7 @@
         "Pred"
     ],
     "telemetry.enableTelemetry": false,
-    "javascript.preferences.quoteStyle": "single",
+    "telemetry.enableCrashReporter": false,
     "editor.quickSuggestionsDelay": 100,
     "editor.snippetSuggestions": "none",
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -48,4 +49,28 @@
     "window.zoomLevel": 0,
     "sync.gist": "6aae7f04d52d5a25a1288d62d93989f0",
     "breadcrumbs.enabled": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": false,
+    "gitlens.statusBar.reduceFlicker": true,
+    "gitlens.views.repositories.enabled": false,
+    "gitlens.views.fileHistory.enabled": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.search.enabled": false,
+    "gitlens.views.compare.enabled": false,
+    "gitlens.blame.format": "${author} : ${message|40?} ${agoOrDate|14-}",
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.heatmap.location": "left",
+    "gitlens.blame.highlight.locations": [
+        "line",
+        "overview",
+        "gutter"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "gitlens.advanced.telemetry.enabled": false,
+    "typescript.surveys.enabled": false,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
 }

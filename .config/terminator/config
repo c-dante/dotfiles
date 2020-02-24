@@ -62,21 +62,21 @@
       type = Terminal
       uuid = 92736af5-1830-40fd-9c32-bfa04e3349b4
     [[[terminal4]]]
-      directory = /home/dante/repos/dv-client
+      directory = /home/dante/repos/dv-txns
       order = 0
       parent = child3
       profile = default
       type = Terminal
       uuid = 5945d5aa-e300-4aad-a7ea-24f7dcab60d9
     [[[terminal5]]]
-      directory = /home/dante/repos/dv-client
+      directory = /home/dante/repos/dv-txns
       order = 1
       parent = child3
       profile = default
       type = Terminal
       uuid = 70a5f145-ea7b-421e-9034-9baa8f77137e
     [[[terminal6]]]
-      directory = /home/dante/repos/dv-client
+      directory = /home/dante/repos
       order = 1
       parent = child2
       profile = default
@@ -90,7 +90,7 @@
       type = Terminal
       uuid = 8767a0a5-3f23-4474-87a9-d40402c74034
     [[[terminal9]]]
-      directory = /home/dante/repos/dv-server/docker
+      directory = /home/dante/repos
       order = 1
       parent = child7
       profile = default

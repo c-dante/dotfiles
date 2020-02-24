@@ -21,6 +21,9 @@ alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold bl
 
 export PATH=~/bin:~/scratch/confluent-3.3.0/bin:~/.cargo/bin:$PATH
 
+#Prevents nice CLI
+export ADBLOCK=true
+
 #Java fonts in gtk
 export JAVA_FONTS=/usr/share/fonts/TTF
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'

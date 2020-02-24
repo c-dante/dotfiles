@@ -11,6 +11,7 @@ unsetopt beep
 zstyle :compinstall filename '/home/dante/.zshrc'
 
 fpath+=~/.zfunc
+fpath=($fpath ~/.zsh/completion)
 
 autoload -Uz compinit
 compinit
@@ -36,6 +37,10 @@ antigen apply
 # ctrl-space to accept suggestion
 bindkey '^ ' autosuggest-accept
 
+
+# Prevent banners in some npm packages
+export ADBLOCK=true
+
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
 
@@ -55,6 +60,7 @@ alias gitp='git'
 alias gg='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%an%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %h%C(reset)%C(bold yellow)%d%C(reset)" --all'
 alias docker-exec='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
 alias env='env | sort | awk -F = '"'"'{ print "\033[1;35m" $1 "\033[0m = " $2; }'"'"''
+alias open='xdg-open'
 
 export WINEARCH=win32
 
@@ -104,7 +110,21 @@ bindkey "^[OF" end-of-line
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
+# ctrl + arrows
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+
+[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}" forward-char
+
 # set psql
 export PSQL_EDITOR=vim
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# fzf
+
+[ -s /usr/share/fzf/key-bindings.zsh ] && \. /usr/share/fzf/key-bindings.zsh
+[ -s /usr/share/fzf/completion.zsh ] && \. /usr/share/fzf/completion.zsh
+if type "rg" > /dev/null; then
+	export FZF_DEFAULT_COMMAND='rg --files'
+fi
