@@ -31,6 +31,7 @@ export LANG=en_US.UTF-8
 
 antigen bundle nojhan/liquidprompt
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle extract
 antigen apply
 
 # configure autosuggests

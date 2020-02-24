@@ -1,9 +1,9 @@
 # dotfiles
 
 + install vcsh `pacaur -S vcsh`
-+ then `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
++ then `vcsh clone git@github.com:c-dante/dotfiles.git`
 + delete any files that are in conflict `rm -rf .config/vcsh`
-+ and `vcsh clone git@github.com:jplikesbikes/dotfiles.git`
++ and `vcsh clone git@github.com:c-dante/dotfiles.git`
 
 ## dconf
 You can load some nice defaults with: `dconf load / < ~/.config/dconf/user.conf`
