@@ -40,6 +40,10 @@ antigen apply
 # ctrl-space to accept suggestion
 bindkey '^ ' autosuggest-accept
 
+# ctrl + arrows
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
 
@@ -112,3 +116,4 @@ bindkey "^[[F" end-of-line
 export PSQL_EDITOR=vim
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+if [ /usr/bin/kubectl ]; then source <(kubectl completion zsh); fi
