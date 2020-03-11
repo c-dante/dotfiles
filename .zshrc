@@ -17,11 +17,11 @@ compinit
 # End of lines added by compinstall
 
 export TERM=xterm-256color
-export PATH=~/bin:~/.cargo/bin:~/scratch/confluent-3.3.0/bin:$PATH
 
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# User paths for usr / home / cargo
+export PATH=/usr/local/bin:$PATH
+export PATH=~/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 
 # Set unicode charset
 export LC_ALL=en_US.UTF-8
@@ -47,7 +47,7 @@ bindkey "^[[1;5D" backward-word
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 [ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
 
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias ll='ls -l'
 alias vi='vim'
 alias hg='hg --color=always'
