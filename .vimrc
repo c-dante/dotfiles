@@ -40,8 +40,20 @@ Plug 'mhinz/vim-startify'
 Plug 'rgarver/Kwbd.vim'
 Plug 'rust-lang/rust.vim'
 " Plug 'ensime/ensime-vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'derekwyatt/vim-scala'
 call plug#end()
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
 
 " Plugin configuration
 " vim-better-whitespace - remove ws on save
@@ -65,8 +77,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" ensime
-let g:ensime_server_v2=1
 " tern
 let g:tern_command='$NVM_BIN/tern'
 " Theme
@@ -76,8 +86,7 @@ colorscheme  distinguished
 " ycm
 let g:ycm_auto_trigger = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
-let g:ycm_rust_src_path = '/home/jp/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 " vim-jsdoc
@@ -91,6 +100,9 @@ if executable('ag')
 	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 	let g:ctrlp_use_caching = 0
 endif
+
+" ctrlp buffer list shortcut
+nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " Sensible defaults from http://stevelosh.com/blog/2010/09/coming-home-to-vim/#making-vim-more-useful
 " tabs

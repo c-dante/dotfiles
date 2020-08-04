@@ -3,26 +3,21 @@
 + install vcsh `pacaur -S vcsh`
 + then `vcsh clone git@github.com:c-dante/dotfiles.git`
 + delete any files that are in conflict `rm -rf .config/vcsh`
-+ and `vcsh clone git@github.com:c-dante/dotfiles.git`
++ and `vcsh dotfiles pull`
 
 ## Vim
 Can't currently autoinstall everything needed for my vimrc.
 You need to install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/)
 and finish up the install of [ternjs/tern_for_vim](https://github.com/ternjs/tern_for_vim)
 ```
-pacaur -S vim-youcompleteme-git
+pikaur -S vim-youcompleteme-git
 cd .vim/plugged/tern_for_vim  && npm install
 rustup component add rust-src
 ```
 
-for ensime (todo:
-```
-pacaur -S python2-sexpdata python2-websocket-client
-```
-
 for my setup of ctrl-p (todo: make this optional)
 ```
-pacaur -S the_silver_searcher
+pikaur -S the_silver_searcher
 ```
 
 On ubuntu, you might need to install vim-plug youself
@@ -53,6 +48,10 @@ Type=Application
 Categories=Games;
 ```
 
+## core dumps
+https://wiki.archlinux.org/index.php/Core_dump#Using_systemd
+https://www.freedesktop.org/software/systemd/man/coredump.conf.html#
+
 ## Cool commands
 `top -c -p $(pgrep -d',' -f name-of-your-process)`
 
@@ -63,3 +62,8 @@ Updating antigen: `antigen selfupdate`
 
 Updating plugins: `antigen update`
 
+## Java in sway
+add to `/etc/environment`
+```
+_JAVA_AWT_WM_NONREPARENTING=1
+```

@@ -9,7 +9,7 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/dante/.zshrc'
 
-fpath+=~/.zfunc
+fpath=($fpath ~/.zsh/completion)
 
 autoload -Uz compinit
 compinit
@@ -19,31 +19,43 @@ export PATH=/usr/local/bin:$PATH
 export PATH=~/bin:$PATH
 export TERM=xterm-256color
 export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
-[ ! -s $HOME/.antigen/antigen.zsh ] && git clone https://github.com/zsh-users/antigen.git .antigen
-[ -s $HOME/.antigen/antigen.zsh ] && source $HOME/.antigen/antigen.zsh # This loads antigen
+[ ! -s $HOME/.zinit/zinit.zsh ] && git clone https://github.com/zdharma/zinit.git ~/.zinit
+[ -s $HOME/.zinit/zinit.zsh ] && source $HOME/.zinit/zinit.zsh # This loads antigen
 
-antigen bundle nojhan/liquidprompt
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle extract
-antigen apply
+zinit light zsh-users/zsh-autosuggestions
+zinit light nojhan/liquidprompt
+zinit snippet OMZ::lib/termsupport.zsh
 
 # configure autosuggests
 # ctrl-space to accept suggestion
 bindkey '^ ' autosuggest-accept
 
+# allow less to display utf-8 characters
+export LESSCHARSET=utf-8
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
-[ -s $HOME/.nvm/nvm.sh ] && source $HOME/.nvm/nvm.sh # This loads NVM
+export NVM_DIR="$HOME/.nvm"
+export NVM_LAZY_LOAD=true
+zinit light lukechilds/zsh-nvm # This load nvm on first use of node, npm, etc
 
-alias ls='ls -G'
-alias ll='ls -l'
+alias ls='ls -lh --color=auto'
 alias vi='vim'
 alias hg='hg --color=always'
-alias less='less -r'
+alias less='less -R'
 alias diff='colordiff -u'
 alias sudo='sudo -E '
 alias gti='git'
 alias gitp='git'
+alias gi='git'
+alias docker-exec='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
+alias env='env | sort | awk -F = '"'"'{ print "\033[1;35m" $1 "\033[0m = " $2; }'"'"''
+alias ls-ln='find node_modules -maxdepth 1 -type l -ls'
+
+# fzf default command to ripgrep
+if type "rg" > /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+fi
 
 # multi-mv
 autoload -U zmv
@@ -59,6 +71,17 @@ ctrlp() {
 zle -N ctrlp
 bindkey "^p" ctrlp
 
+# fzf in shell with ctrl-t
+[ -s /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -s /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+
+#open vim in ctrl-p using ctrlp
+ctrla() {
+  </dev/tty vim -c Grepper
+}
+zle -N ctrla
+bindkey "^a" ctrla
+
 # vi mode in right prompt
 function zle-line-init zle-keymap-select {
 	VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
@@ -68,6 +91,10 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=2
+
+# ctrl + arrows for history completion
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # In Vim backspace doesn't stop at the point where you started insert mode:
 bindkey '^?' backward-delete-char
@@ -93,5 +120,7 @@ bindkey "^[[F" end-of-line
 
 # set psql
 export PSQL_EDITOR=vim
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+if [  ]; then source <(kubectl completion zsh); fi
+if [  ]; then source <(argocompletion zsh); fi
