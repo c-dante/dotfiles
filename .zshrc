@@ -1,3 +1,6 @@
+# profile zsh start
+# zmodload zsh/zprof
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -18,8 +21,12 @@ compinit
 export PATH=/usr/local/bin:$PATH
 export PATH=~/bin:$PATH
 export TERM=xterm-256color
-export PATH=/home/dante/bin:/home/dante/.cargo/bin:/home/dante/scratch/confluent-3.3.0/bin:$PATH
+export PATH=~/bin:/home/dante/.cargo/bin:~/scratch/confluent-3.3.0/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=~/.local/bin:$PATH
+
+# Add in caskroom for gcloud
+export PATH=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH
 
 [ ! -s $HOME/.zinit/zinit.zsh ] && git clone https://github.com/zdharma/zinit.git ~/.zinit
 [ -s $HOME/.zinit/zinit.zsh ] && source $HOME/.zinit/zinit.zsh # This loads antigen
@@ -38,6 +45,9 @@ export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
 zinit light lukechilds/zsh-nvm # This load nvm on first use of node, npm, etc
+
+
+zinit light davidparsson/zsh-pyenv-lazy
 
 # LS colors for bsd/linux
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -148,3 +158,8 @@ jenv() {
     command jenv "$command" "$@";;
   esac
 }
+
+[ -s $HOME/.envrc.sh ] && source $HOME/.envrc.sh
+
+# Perfomance for zinit
+# zprof
