@@ -107,8 +107,8 @@ zle -N zle-keymap-select
 export KEYTIMEOUT=2
 
 # ctrl + arrows for history completion
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
 
 # In Vim backspace doesn't stop at the point where you started insert mode:
 bindkey '^?' backward-delete-char
