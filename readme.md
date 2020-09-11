@@ -67,3 +67,13 @@ add to `/etc/environment`
 ```
 _JAVA_AWT_WM_NONREPARENTING=1
 ```
+
+## osx stuff
+compaudit will yell, might need to updat ownerships:
+https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
+```
+$ cd /usr/local/share/
+$ sudo chmod -R 755 zsh
+$ sudo chown -R root:staff zsh
+```
+
