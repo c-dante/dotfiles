@@ -1,4 +1,5 @@
 #!/bin/bash
+set -Eeuxo pipefail
 
 # Stop and delete all containers
 docker stop $(docker ps -a -q)
