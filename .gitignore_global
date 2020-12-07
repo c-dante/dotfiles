@@ -51,3 +51,4 @@ node_modules
 # Custom local things #
 # #####################
 nogit
+.java-version

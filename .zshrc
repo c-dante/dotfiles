@@ -156,7 +156,7 @@ eval export PATH="/Users/federici/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
 export JENV_LOADED=1
 unset JAVA_HOME
-source '/usr/local/Cellar/jenv/0.5.3/libexec/libexec/../completions/jenv.zsh'
+source '/usr/local/Cellar/jenv/0.5.4/libexec/completions/jenv.zsh'
 jenv rehash 2>/dev/null
 jenv() {
   typeset command
@@ -175,5 +175,9 @@ jenv() {
 
 [ -s $HOME/.envrc.sh ] && source $HOME/.envrc.sh
 
+# Load direnv hook
+eval "$(direnv hook zsh)"
+
 # Perfomance for zinit
 # zprof
+if [ -e /Users/federici/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/federici/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
